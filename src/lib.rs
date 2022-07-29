@@ -59,6 +59,7 @@ pub struct StatusResponse {
 }
 
 impl<'a> ServerStatus<'a> {
+    #[inline]
     pub fn new(host: &'a str, port: u16, timeout: Option<Duration>, max_size: Option<u32>) -> Self {
         Self {
             host,
