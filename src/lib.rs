@@ -54,7 +54,7 @@ pub struct StatusResponse {
     pub description: Description,
     #[serde(default)]
     pub favicon: String,
-    pub players: Players,
+    pub players: Option<Players>,
     pub version: Version,
 }
 

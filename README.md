@@ -3,7 +3,7 @@
 Lightweight and small library to query minecraft server information.
 
 #### usage
-```
+```rust
 use mc_server_ping::ServerStatus;
 
 fn main() {
@@ -17,7 +17,7 @@ or
 `cargo run --example main`
 
 ###### example response
-```
+```json
 {
   "description": "                §aHypixel Network §c[1.8-1.19]\n       §b§lNEW: DROPPER §7§l| §6§lSUMMER EVENT§7§l+§e§lSALE",
   "favicon": "data:image/png;base64...",
