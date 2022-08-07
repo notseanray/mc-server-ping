@@ -51,9 +51,9 @@ pub enum Description {
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct StatusResponse {
-    pub description: Description,
+    pub description: Option<Description>,
     #[serde(default)]
-    pub favicon: String,
+    pub favicon: Option<String>,
     pub players: Option<Players>,
     pub version: Version,
 }
@@ -118,7 +118,7 @@ impl<'a> ServerStatus<'a> {
             Some(v) => v,
             None => return Err("no server response, did you forget to query?".into()),
         };
-        Ok(serde_json::from_str(&String::from_utf8(data.to_vec())?).expect("parse fail"))
+        Ok(serde_json::from_str(&String::from_utf8(data.to_vec())?)?)
     }
 
     #[inline(always)]
